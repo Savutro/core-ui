@@ -1,0 +1,49 @@
+{
+  "name": "@savutro/core-ui",
+  "version": "0.1.0",
+  "description": "A standards-based web component library for shared Savutro app design language.",
+  "type": "module",
+  "main": "./dist/core-ui.umd.cjs",
+  "module": "./dist/core-ui.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/core-ui.js",
+      "require": "./dist/core-ui.umd.cjs"
+    },
+    "./tokens.css": "./dist/tokens.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savutro/core-ui.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc && vite build && node scripts/copy-tokens.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "web-components",
+    "design-system",
+    "ui",
+    "lit"
+  ],
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}

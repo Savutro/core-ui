@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Core UI</title>
+    <script type="module" src="/src/index.ts"></script>
+    <style>
+      @import url('/src/styles/tokens.css');
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--cu-color-surface);
+        color: var(--cu-color-text);
+        font-family: var(--cu-font-sans);
+      }
+
+      main {
+        width: min(960px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 48px 0;
+      }
+
+      header {
+        margin-bottom: 32px;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1;
+      }
+
+      p {
+        max-width: 64ch;
+        color: var(--cu-color-text-muted);
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .stack {
+        display: grid;
+        gap: 20px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Core UI</h1>
+        <p>Shared web components and design tokens for a consistent app interface.</p>
+      </header>
+
+      <div class="stack">
+        <cu-card>
+          <h2 slot="heading">Action patterns</h2>
+          <p>Buttons use consistent radius, spacing, color, and focus states.</p>
+          <div class="row">
+            <cu-button>Primary action</cu-button>
+            <cu-button variant="secondary">Secondary</cu-button>
+            <cu-button variant="ghost">Ghost</cu-button>
+          </div>
+        </cu-card>
+
+        <cu-card tone="accent">
+          <h2 slot="heading">Token-driven surfaces</h2>
+          <p>Components read from CSS custom properties so each app can theme the same primitives.</p>
+          <cu-button>Use component</cu-button>
+        </cu-card>
+      </div>
+    </main>
+  </body>
+</html>
+
